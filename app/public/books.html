@@ -7,6 +7,7 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <header>
@@ -28,69 +29,13 @@
             <th class="text-center">MSRP</th>
           </tr>
           </thead>
-          <tr>
-            <td class="text-center"> {{title}} </td>
-            <td class="text-center"> {{author}} </td>
-            <td class="text-center"> {{year_published}} </td>
-            <td class="text-center"> {{publisher}} </td>
-            <td class="text-center"> {{page_count}} </td>
-            <td class="text-center"> {{MSRP}} </td>
-          </tr>
-          <tr>
-            <td class="text-center"> A Farewell to Arms </td>
-            <td class="text-center"> Ernest Hemmingway </td>
-            <td class="text-center"> 1929 </td>
-            <td class="text-center"> Simon & Schuster </td>
-            <td class="text-center"> 355 </td>
-            <td class="text-center"> $14.99 </td>
-          </tr>
-          <tr>
-            <td class="text-center"> Anna Karenina </td>
-            <td class="text-center"> Leo Tolstoy </td>
-            <td class="text-center"> 1878 </td>
-            <td class="text-center"> The Russian Messenger </td>
-            <td class="text-center"> 864 </td>
-            <td class="text-center"> $16.38 </td>
-          </tr>
-          <tr>
-            <td class="text-center"> To Kill a Mockingbird </td>
-            <td class="text-center"> Harper Lee </td>
-            <td class="text-center"> 1960 </td>
-            <td class="text-center"> J.B. Lippincott & Co. </td>
-            <td class="text-center"> 281 </td>
-            <td class="text-center"> $7.19 </td>
-          </tr>
-          <tr>
-            <td class="text-center"> The Sound and the Fury </td>
-            <td class="text-center"> William Faulkner </td>
-            <td class="text-center"> 1929 </td>
-            <td class="text-center"> Jonathan Cape and Harrison Smith </td>
-            <td class="text-center"> 326 </td>
-            <td class="text-center"> $11.79 </td>
-          </tr>
-          <tr>
-            <td class="text-center"> David Copperfield </td>
-            <td class="text-center"> Charles Dickens </td>
-            <td class="text-center"> 1850 </td>
-            <td class="text-center"> Bradbury and Evans </td>
-            <td class="text-center"> 624 </td>
-            <td class="text-center"> $9.99 </td>
-          </tr>
-          <tr>
-            <td class="text-center"> 1984 </td>
-            <td class="text-center"> George Orwell </td>
-            <td class="text-center"> 1949 </td>
-            <td class="text-center"> Secker & Warburg </td>
-            <td class="text-center"> 328 </td>
-            <td class="text-center"> $7.48 </td>
-          </tr>
-          <tr>
-            <td class="text-center"> Green Eggs and Ham </td>
-            <td class="text-center"> Dr. Seuss </td>
-            <td class="text-center"> 1960 </td>
-            <td class="text-center"> Random House </td>
-            <td class="text-center"> 62 </td>
-            <td class="text-center"> $8.12 </td>
+          <tr v-for="book in books">
+            <td class="text-center"> {{book.title}} </td>
+            <td class="text-center"> {{book.author}} </td>
+            <td class="text-center"> {{book.year_published}} </td>
+            <td class="text-center"> {{book.publisher}} </td>
+            <td class="text-center"> {{book.page_count}} </td>
+            <td class="text-center"> {{book.MSRP}} </td>
           </tr>
         </table>
       </div>
