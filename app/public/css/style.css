@@ -1,0 +1,55 @@
+profile{
+  width: 100pt;
+}
+nav{
+  background-color:#f6d55c;
+}
+a:hover{
+  color:#20639B;
+}
+body{
+  background-color: #173f5f;
+  color:white;
+}
+th{
+  color:white;
+}
+td{
+  color:white;
+}
+tr:hover{
+  background-color: #20639B;
+}
+.sign-up-table:hover{
+  background-color: #173f5f;
+}
+#navhome{
+  color:#20639B;
+}
+#navhome:hover{
+  color:#3caea3;
+}
+#navdata{
+  color:#3caea3;
+}
+#navdata:hover{
+  color:#20639B
+}
+#navbooks{
+  color:#ed553b;
+}
+#navbooks:hover{
+  color:#20639B
+}
+h2{
+  color:#3caea3;
+}
+h4{
+  color: #ed553b;
+}
+.homeimg{
+  width: 400pt;
+}
+p{
+  font-size: 8pt;
+}

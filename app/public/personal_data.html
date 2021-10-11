@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Personal Data</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a id="navhome" class="nav-link active" aria-current="page" href="index.html">Home</a>
+        <a id="navdata" class="nav-link active" aria-current="page" href="personal_data.html">Personal Data</a>
+        <a id="navbooks" class="nav-link active" aria-current="page" href="books.html">Books</a>
+      </nav>
+    </header>
+    <div id="offerApp">
+    <table class="table table-striped table-hover
+      table-condensed">
+      <thead>
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Country of Origin</th>
+            <th class="text-center">Birthdate</th>
+            <th class="text-center">Age</th>
+            <th class="text-center">Email Address</th>
+            <th class="text-center">Photo</th>
+          </tr>
+        </thead>
+      <tbody>
+          <tr>
+            <td class="text-center"> {{person.name.first}} {{person.name.last}} </td>
+            <td class="text-center"> {{person.location.country}} </td>
+            <td class="text-center"> {{prettyBirthday}} </td>
+            <td class="text-center"> {{person.dob.age}} </td>
+            <td class="text-center"> <a v-bind:href="'mailto:'+person.email">{{person.email}}</a> </td>
+            <td class="text-center"> <img v-bind:src="person.picture.large"></td>
+          </tr>
+      </tbody>
+
+    </table>
+    <form v-on:submit.prevent="fetchUserData">
+      <button type="click">Refresh Data</button>
+    </form>
+  </div>
+    <h1>Add Person</h1>
+    <table class="table-borderless">
+      <form action ="/script.php" method="post">  
+          <tr>
+          <td class="sign-up-table"><label for="name">Name:</label> </td>
+          <td class="sign-up-table"><input type="textbox"name="suppname"></td>
+          </tr>
+          <tr>
+          <td class="sign-up-table"><label for="country">Country:</label></td>
+          <td class="sign-up-table"><input type="textbox" name="country"></td>
+          </tr>
+            <tr>
+          <td class="sign-up-table"><label for="birthdate">Birthdate:</label></td> 
+          <td class="sign-up-table"><input type="textbox" name="birthdate"></td>
+          </tr>
+          <tr>
+          <td class="sign-up-table"><label for="age">Age:</label></td> 
+          <td class="sign-up-table"><input type="textbox" name=age id="age"></td>
+          </tr>
+          <tr>
+          <td class="sign-up-table"><label for="email">E-Mail:</label></td> 
+          <td class="sign-up-table"><input type="textbox" name="email"></td>
+          </tr>
+          <td class="sign-up-table">
+          <input type="submit" value="Submit"> </td> 
+          </tr>
+        </form>
+      </table>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+       <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+      <script src="js/personal_data.js"></script>
+  </body>
+</html>
