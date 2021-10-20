@@ -3,15 +3,14 @@ const BookApp = {
     data() {
       return {
         books: [],
-        selectedStudent: null,
-        offers: [],
-        offerForm: {}
+        bookForm: {},
+        "SampleBooks":[]
       }
     },
     computed: {},
     methods: {
         fetchBookData() {
-            fetch('/api/books/index.php')
+            fetch('/api/books/')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
@@ -21,14 +20,11 @@ const BookApp = {
                 console.error(err);
             })
         },
-        postNewOffer(evt) {
-          this.offerForm.studentId = this.selectedStudent.id;        
-          console.log("Posting:", this.offerForm);
-          // alert("Posting!");
-  
-          fetch('api/offer/create.php', {
+        postNewBook(evt) {
+          console.log(JSON.stringify(this.bookForm))       
+          fetch('/api/books/addbook.php', {
               method:'POST',
-              body: JSON.stringify(this.offerForm),
+              body: JSON.stringify(this.bookForm),
               headers: {
                 "Content-Type": "application/json; charset=utf-8"
               }
@@ -37,10 +33,11 @@ const BookApp = {
             .then( json => {
               console.log("Returned from post:", json);
               // TODO: test a result was returned!
-              this.offers = json;
+              this.SampleBooks = json;
               
+              console.log(SampleBooks)
               // reset the form
-              this.offerForm = {};
+              this.handleResetEdit();
             });
         }
     },
