@@ -13,6 +13,9 @@ CREATE TABLE books (
     PRIMARY KEY(id)
 );
 
+
+
+
 INSERT INTO books (title, author, year_published, publisher, page_count, MSRP) VALUES 
 ('The Great Gatsby','F. Scott Fitzgerald',1925,'Charles Scribners Sons',240,5.97),
 ('A Farewell to Arms', 'Ernest Hemmingway',1929,'Simon & Schuster',355,14.99),
